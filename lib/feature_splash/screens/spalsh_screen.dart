@@ -30,14 +30,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green.shade400,
+      backgroundColor: Colors.grey.shade900,
       body:Center(
         child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 120,
-              height:120,
+              width: 150,
+              height:150,
               decoration: BoxDecoration(
                 
                 borderRadius: BorderRadius.circular(20),
@@ -51,6 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 9, 220, 17)
             ),
             )
           ],
