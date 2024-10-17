@@ -168,7 +168,7 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
                           subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Total Consumption:  ${(appliance.consumption)}',
+                              Text('Total Consumption:  ${(appliance.consumption)}kWh',
                               style: const TextStyle(
                             fontWeight: FontWeight.normal,
                             color: Colors.white,
