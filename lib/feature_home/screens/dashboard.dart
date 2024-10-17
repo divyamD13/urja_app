@@ -30,7 +30,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                   child: Row(
                     children: [
                       const Text(
-                        'Hi Siddharth!', // Replace with actual name
+                        'Hi Ashutosh!', // Replace with actual name
                         style: TextStyle(
                           fontSize: 30, // Adjust font size
                           fontWeight: FontWeight.w500,
