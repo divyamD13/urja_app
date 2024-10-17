@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:urja_app/feature_application/screens/applications.dart';
+import 'package:urja_app/feature_appliances/screens/add_appliance.dart';
 import 'package:urja_app/feature_home/screens/dashboard.dart';
 import 'package:urja_app/feature_profile/screens/profile.dart';
-import 'package:urja_app/feature_tips/screens/tips_page.dart';
+import 'package:urja_app/feature_tips/screens/tips_screen.dart';
+
 
 class Bottomnav extends StatefulWidget {
   const Bottomnav({super.key});
@@ -15,8 +16,8 @@ class _BottomnavigationState extends State<Bottomnav> {
   int index = 0;
   final screens = [
     const DashBoardScreen(),
-    const Applications(),
-    const TipsPage(),
+     ApplianceListScreen(),
+    const TipsScreen(),
     const ProfilePage()
   ];
   @override
@@ -38,25 +39,25 @@ class _BottomnavigationState extends State<Bottomnav> {
                 NavigationDestination(
                     icon: Icon(
                       Icons.home_outlined,
-                      color: Colors.grey,
+                      color: Colors.white,
                     ),
-                    label: 'Home'),
+                    label:'Home'),
                 NavigationDestination(
                     icon: Icon(
                       Icons.light_rounded,
-                      color: Colors.grey,
+                      color: Colors.white,
                     ),
                     label: 'Application'),
                 NavigationDestination(
                     icon: Icon(
                       Icons.spa_outlined,
-                      color: Colors.grey,
+                      color: Colors.white,
                     ),
                     label: 'Tips'),
                 NavigationDestination(
                     icon: Icon(
                       Icons.person_2_outlined,
-                      color: Colors.grey,
+                      color: Colors.white,
                     ),
                     label: 'Profile'),
               ]),
