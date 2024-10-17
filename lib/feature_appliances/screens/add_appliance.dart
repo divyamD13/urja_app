@@ -49,9 +49,9 @@ class ApplianceListScreen extends StatefulWidget {
 
 class _ApplianceListScreenState extends State<ApplianceListScreen> {
   List<Appliance> appliances = [
-    Appliance(name: "Master AC", consumption: "25kWh", runtime: "5 Hr",room: 'Bedroom'),
-    Appliance(name: "Night Lamp", consumption: "5kWh", runtime: "10 Hr",room: 'Living Room'),
-    Appliance(name: "Main Light", consumption: "10kWh", runtime: "17 Hr",room: 'Hall'),
+    Appliance(name: "Master AC", consumption: "25", runtime: "5 Hr",room: 'Bedroom'),
+    Appliance(name: "Night Lamp", consumption: "5", runtime: "10 Hr",room: 'Living Room'),
+    Appliance(name: "Main Light", consumption: "10", runtime: "17 Hr",room: 'Hall'),
   ];
 
   final TextEditingController nameController = TextEditingController();
