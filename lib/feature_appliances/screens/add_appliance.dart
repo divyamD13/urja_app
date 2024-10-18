@@ -27,6 +27,8 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:urja_app/feature_appliances/models/appliance.dart';
+import 'package:lite_rolling_switch/lite_rolling_switch.dart';
+
 
 class ApplianceListScreen extends StatefulWidget {
   @override
@@ -116,10 +118,10 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white)),
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: const Color.fromARGB(255, 13, 13, 13),
       ),
       body: Scaffold(
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: const Color.fromARGB(255, 13, 13, 13),
         body: Column(
           children: [
             SizedBox(
@@ -138,7 +140,7 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
                       borderRadius: BorderRadius.circular(15.0),
                       child: ListTile(
                         minTileHeight: 100,
-                        tileColor: const Color.fromARGB(255, 53, 49, 49),
+                        tileColor: const Color.fromARGB(255, 31, 29, 29),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                           side: const BorderSide(
@@ -184,6 +186,22 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
                                 )),
                           ],
                         ),
+                        trailing: LiteRollingSwitch(
+    //initial value
+    value: true,
+    width: 90,
+    textOn: 'ON',
+    textOff: 'OFF',
+    colorOn: Colors.green,
+    colorOff: Colors.grey,
+    iconOn: Icons.done,
+    iconOff: Icons.power_settings_new,
+    textSize: 13.0,
+    onChanged: (bool state) {
+      //Use it to manage the different states
+      print('Current State of SWITCH IS: $state');
+    }, onTap: (){}, onDoubleTap: (){}, onSwipe: (){},
+),
                       ),
                     ),
                   );

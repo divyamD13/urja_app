@@ -6,7 +6,7 @@ class TipsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: const Color.fromARGB(255, 13, 13, 13),
       appBar: AppBar(
         title: const Center(
           child: Text('Energy Saving Tips',
@@ -15,7 +15,7 @@ class TipsScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.white)),
         ),
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: const Color.fromARGB(255, 13, 13, 13),
         elevation: 0,
       ),
       body: Column(
@@ -26,7 +26,7 @@ class TipsScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: ListTile(
-              tileColor: const Color.fromARGB(255, 8, 147, 12),
+              tileColor: const Color.fromARGB(255, 49, 230, 55),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
 
@@ -40,7 +40,7 @@ class TipsScreen extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: Colors.black),
                 ),
               ),
               subtitle: const Center(
@@ -49,7 +49,7 @@ class TipsScreen extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.normal,
-                      color: Colors.white),
+                      color: Colors.black),
                 ),
               ),
             ),

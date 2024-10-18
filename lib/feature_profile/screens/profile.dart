@@ -7,7 +7,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: const Color.fromARGB(255, 13, 13, 13),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Profile',
@@ -15,7 +15,7 @@ class ProfilePage extends StatelessWidget {
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
                 color: Colors.white)),
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: const Color.fromARGB(255, 13, 13, 13),
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -143,7 +143,7 @@ class ProfilePage extends StatelessWidget {
                               color: Colors.black),
                         ),
                         Text(
-                          'Rs. 2,136',
+                          'Rs. 1,014',
                           style: TextStyle(
                               fontSize: 25,
                               color: Colors.black,
@@ -162,7 +162,7 @@ class ProfilePage extends StatelessWidget {
                               color: Colors.black),
                         ),
                         Text(
-                          '2.16 Units',
+                          '210 kWh',
                           style: TextStyle(
                               fontSize: 25,
                               color: Colors.black,
