@@ -16,15 +16,15 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(16, 35, 5, 25),
+            padding: const EdgeInsets.fromLTRB(16, 35, 5, 25),
             child: Row(
               children: [
                 // Profile picture
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 30, // Adjust the size of the profile picture
                   backgroundImage: AssetImage('assets/images/person1.jpg'),
                 ),
-                SizedBox(width: 10), // Spacing between image and name
+                const SizedBox(width: 10), // Spacing between image and name
                 // Name and status icon
                 Expanded(
                   child: Row(
