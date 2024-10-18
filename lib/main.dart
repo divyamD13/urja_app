@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:urja_app/feature_home/screens/dashboard.dart';
 import 'package:urja_app/feature_splash/screens/spalsh_screen.dart';
 
 void main() {
@@ -14,7 +13,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 9, 220, 17),),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 9, 233, 17),
+        ),
         useMaterial3: true,
       ),
       home: SplashScreen(),

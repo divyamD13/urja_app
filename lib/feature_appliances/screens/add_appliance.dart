@@ -28,20 +28,6 @@
 import 'package:flutter/material.dart';
 import 'package:urja_app/feature_appliances/models/appliance.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ApplianceListScreen(),
-    );
-  }
-}
-
 class ApplianceListScreen extends StatefulWidget {
   @override
   _ApplianceListScreenState createState() => _ApplianceListScreenState();
@@ -49,14 +35,20 @@ class ApplianceListScreen extends StatefulWidget {
 
 class _ApplianceListScreenState extends State<ApplianceListScreen> {
   List<Appliance> appliances = [
-    Appliance(name: "Master AC", consumption: "25", runtime: "5 Hr",room: 'Bedroom'),
-    Appliance(name: "Night Lamp", consumption: "5", runtime: "10 Hr",room: 'Living Room'),
-    Appliance(name: "Main Light", consumption: "10", runtime: "17 Hr",room: 'Hall'),
+    Appliance(
+        name: "Master AC", consumption: "25", runtime: "5 Hr", room: 'Bedroom'),
+    Appliance(
+        name: "Night Lamp",
+        consumption: "5",
+        runtime: "10 Hr",
+        room: 'Living Room'),
+    Appliance(
+        name: "Main Light", consumption: "10", runtime: "17 Hr", room: 'Hall'),
   ];
 
   final TextEditingController nameController = TextEditingController();
-  final  consumptionController = TextEditingController();
-  final TextEditingController roomController=TextEditingController();
+  final consumptionController = TextEditingController();
+  final TextEditingController roomController = TextEditingController();
 
   void _addAppliance() {
     String name = nameController.text;
@@ -65,7 +57,8 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
 
     if (name.isNotEmpty && consumption.isNotEmpty) {
       setState(() {
-        appliances.add(Appliance(name: name, consumption: consumption, runtime: "0 Hr",room:room));
+        appliances.add(Appliance(
+            name: name, consumption: consumption, runtime: "0 Hr", room: room));
       });
       nameController.clear();
       consumptionController.clear();
@@ -89,11 +82,12 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
               ),
               TextField(
                 controller: consumptionController,
-                decoration: InputDecoration(labelText: 'Rating of Appliance (in Watts)'),
+                decoration: InputDecoration(
+                    labelText: 'Rating of Appliance (in Watts)'),
               ),
               TextField(
-                controller:roomController,
-                decoration: InputDecoration(labelText:'Room'),
+                controller: roomController,
+                decoration: InputDecoration(labelText: 'Room'),
               ),
             ],
           ),
@@ -118,79 +112,81 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Home Appliances',
-        style:TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white
-        )
-        ),
-        backgroundColor:Colors.grey.shade900,
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white)),
+        backgroundColor: Colors.grey.shade900,
       ),
-      body:Scaffold(
+      body: Scaffold(
         backgroundColor: Colors.grey.shade900,
         body: Column(
           children: [
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Expanded(
               child: ListView.builder(
                 itemCount: appliances.length,
                 itemBuilder: (context, index) {
                   Appliance appliance = appliances[index];
-                  return 
-                     Padding(
-                      padding: const EdgeInsets.only(
-                                top: 20, left: 15, right: 15,bottom: 10),
-                       child: Material(
-                        elevation: 3,
-                        borderRadius: BorderRadius.circular(15.0),
-                        child: ListTile(
-                          minTileHeight: 100,
-                          tileColor: const Color.fromARGB(255, 53, 49, 49),
-                          shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15),
-                                      side: const BorderSide(
-                                        color: Colors.grey,
-                                      ), //
-                                    ),
-                          leading: const SizedBox(
-                            width: 45,
-                            height: 45,
-                            child: Icon(Icons.electric_bolt_rounded,
+                  return Padding(
+                    padding: const EdgeInsets.only(
+                        top: 20, left: 15, right: 15, bottom: 10),
+                    child: Material(
+                      elevation: 3,
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: ListTile(
+                        minTileHeight: 100,
+                        tileColor: const Color.fromARGB(255, 53, 49, 49),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          side: const BorderSide(
+                            color: Colors.grey,
+                          ), //
+                        ),
+                        leading: const SizedBox(
+                          width: 45,
+                          height: 45,
+                          child: Icon(
+                            Icons.electric_bolt_rounded,
                             color: Color.fromARGB(255, 8, 185, 14),
-                            ),
                           ),
-                          title: Text(appliance.name,
+                        ),
+                        title: Text(
+                          appliance.name,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
-                          ),
-                          subtitle: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Total Consumption:  ${(appliance.consumption)}kWh',
-                              style: const TextStyle(
-                            fontWeight: FontWeight.normal,
-                            color: Colors.white,
-                          ),
-                              ),
-                              Text('Run Time:  ${appliance.runtime}',
+                        ),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Total Consumption:  ${(appliance.consumption)}kWh',
                               style: const TextStyle(
                                 fontWeight: FontWeight.normal,
                                 color: Colors.white,
-                              ),),
-                              Text('Room:  ${appliance.room}',
-                                style: const TextStyle(
-                            fontWeight: FontWeight.normal,
-                            color: Colors.white,
-                          )
                               ),
-                            ],
-                          ),
+                            ),
+                            Text(
+                              'Run Time:  ${appliance.runtime}',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text('Room:  ${appliance.room}',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.white,
+                                )),
+                          ],
                         ),
                       ),
-                     );
-                  
+                    ),
+                  );
                 },
               ),
             ),
@@ -199,7 +195,8 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
               child: ElevatedButton(
                 onPressed: _showAddApplianceDialog,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 8, 185, 14), // background
+                  backgroundColor:
+                      Color.fromARGB(255, 8, 185, 14), // background
                   foregroundColor: Colors.white, // foreground
                 ),
                 child: Text('Add Appliance'),
@@ -211,4 +208,3 @@ class _ApplianceListScreenState extends State<ApplianceListScreen> {
     );
   }
 }
-
