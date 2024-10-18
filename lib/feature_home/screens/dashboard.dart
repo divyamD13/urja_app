@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:urja_app/feature_home/screens/notification.dart';
+import 'package:urja_app/feature_home/widgets/toggle_button.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
@@ -15,8 +16,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       backgroundColor: Colors.grey.shade900,
       body: Column(
         children: [
+          
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 35, 5, 25),
+            padding: const EdgeInsets.fromLTRB(16, 45, 5, 25),
             child: Row(
               children: [
                 // Profile picture
@@ -29,15 +31,28 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 Expanded(
                   child: Row(
                     children: [
-                      const Text(
-                        'Hi Ashutosh!', // Replace with actual name
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                        'Welcome', // Replace with actual name
                         style: TextStyle(
-                          fontSize: 30, // Adjust font size
+                          fontSize: 15, // Adjust font size
                           fontWeight: FontWeight.w500,
                           color: Colors.white, // Adjust font weight
                         ),
                       ),
-                      Spacer(),
+                      Text(
+                        'Ashutosh', // Replace with actual name
+                        style: TextStyle(
+                          fontSize: 30, // Adjust font size
+                          fontWeight: FontWeight.w500,
+                          color:const Color.fromARGB(255, 49, 230, 55), // Adjust font weight
+                        ),
+                      ),
+                        ]
+                      ),
+                      const Spacer(),
                       InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
@@ -53,6 +68,93 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               ],
             ),
           ),
+          
+          // 
+           // Spacing between sections
+          Column(
+            children: [
+              MyAnimatedToggle(),
+              SizedBox(height: 10,),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: Container(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width,
+                  decoration:BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                     color: Colors.green,
+                     border: Border.all(color: Colors.grey), // Adjust border color and width
+                      // Replace with actual image
+                  ),
+                   child:Padding(
+                     padding: const EdgeInsets.all(16.0),
+                     child: const Column(
+                       children: [
+                          Center(
+                            child: Text(
+                              'Prediction for your month',
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            ),
+                          ),
+                        SizedBox(height: 10,),
+                        Center(
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'Energy use for month',
+                                  style: TextStyle(
+                                      fontSize:15,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black),
+                                ),
+                                Spacer(),
+                                Text(
+                                  'Bill for the month',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 15,),
+                            Row(
+                              children: [
+                                Text(
+                                  '370kWh',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black
+                                  )),
+                                Spacer(),
+                                Text(
+                                  'Rs. 2,500',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black,
+                                  )
+                                  ),
+                          ],
+                            ),
+                          ],
+                        ),
+                      ),
+                       ],
+                     ),
+                   ),
+                 
+                ),
+              ),
+            ],
+          ),
+          
         ],
       ),
     );
