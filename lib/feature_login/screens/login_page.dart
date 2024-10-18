@@ -9,7 +9,15 @@ class LoginPage extends StatelessWidget {
   // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
-
+  final snackbar=SnackBar(
+            content: const Text('Invalid Login Credentials'),
+            action: SnackBarAction(
+              label: 'RETRY',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          );
   // sign user in method
 
   @override
@@ -19,8 +27,13 @@ class LoginPage extends StatelessWidget {
               passwordController.text == "Ashu@123")
           ? Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => const Bottomnav()))
-          : Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => LoginPage()));
+              : ScaffoldMessenger.of(context).showSnackBar(snackbar);
+
+          // Find the ScaffoldMessenger in the widget tree
+          // and use it to show a SnackBar.
+          
+          // : Navigator.pushReplacement(
+              // context, MaterialPageRoute(builder: (context) => LoginPage()));
     }
 
     return Scaffold(
