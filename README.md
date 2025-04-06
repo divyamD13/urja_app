@@ -74,24 +74,11 @@ A smart, intuitive mobile application designed to help users monitor and manage 
 
 ---
 
-## 🌱 Future Enhancements
-
-- Push notifications for abnormal energy usage  
-- IoT integration with smart plugs/devices  
-- Dark mode and customizable UI themes  
-- Multi-user support for shared households  
-
----
-
 ## 🧠 Why This App?
 
 This app is built with the vision of making energy monitoring accessible and actionable for every household. Whether you're aiming to reduce bills, minimize your carbon footprint, or simply stay informed, this smart tracker provides all the tools you need.
 
 ---
-
-## 📬 Feedback
-
-Feel free to open issues or submit pull requests. Feedback and contributions are always welcome!
 
 
 
