@@ -28,7 +28,6 @@ class LoginPage extends StatelessWidget {
           ? Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => const Bottomnav()))
               : ScaffoldMessenger.of(context).showSnackBar(snackbar);
-
           // Find the ScaffoldMessenger in the widget tree
           // and use it to show a SnackBar.
           
