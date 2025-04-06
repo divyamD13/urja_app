@@ -1,5 +1,5 @@
 
-# ⚡ Smart Energy Tracker App
+# ⚡ Smart Energy Tracker App - URJA
 
 A smart, intuitive mobile application designed to help users monitor and manage household energy consumption efficiently. With real-time tracking, detailed charts, and smart tips, this app empowers users to save energy, track bills, and make informed choices about their appliance usage.
 
